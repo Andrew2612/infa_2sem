@@ -6,7 +6,7 @@ int main() {
     std::cin >> n;
 
     if (n < 0) {
-        std::cout<< "Факториал не определен" << std::endl;
+        std::cout<< "\n" << std::endl;
     }
     else if (n == 0) {
         std::cout<< m << std::endl;
