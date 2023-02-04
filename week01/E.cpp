@@ -16,7 +16,7 @@ int main() {
     std::cin >> n >> m;
 
     if (n == 0 or m == 0)
-        std::cout << "НОК не определён" << std::endl;
+        std::cout << "\n" << std::endl;
     else {
         if (n < 0)
             n = -n;
