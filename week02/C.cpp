@@ -3,10 +3,13 @@
 int main() {
     int a = 0;
     std::cin >> a;
-
-    if (a % 400 == 0) {
-        std::cout << "YES" << std::endl;
-    } else if (a % 100 != 0 && a % 4 == 0) {
+    if (a == 1 || a == 0) {
+        a = 3;
+    }
+    while (a % 2 == 0) {
+        a /= 2;
+    }
+    if (a == 1) {
         std::cout << "YES" << std::endl;
     } else {
         std::cout << "NO" << std::endl;

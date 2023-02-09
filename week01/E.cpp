@@ -15,7 +15,7 @@ int main() {
     int n = 0, m = 0;
     std::cin >> n >> m;
 
-    if (n == 0 or m == 0)
+    if (n == 0 || m == 0)
         std::cout << "\n" << std::endl;
     else {
         if (n < 0)
