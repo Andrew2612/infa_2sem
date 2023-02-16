@@ -10,8 +10,8 @@
 
 void print_transoposed(int (&array)[N][M]) {
     for (int i = 0; i < M; i++) {
-        for(int j = 0; i < N; i++) {
-            std::cout << array[i][j]; 
+        for(int j = 0; j < N; j++) {
+            std::cout << array[j][i]; 
         }
         std::cout << std::endl;
     }        
@@ -24,7 +24,7 @@ int main() {
 
 
     for (int i = 0; i < M; i++) {
-        for(int j = 0; i < N; i++) {
+        for(int j = 0; j < N; j++) {
             std::cin >> x;
             a[i][j] = x; 
         }

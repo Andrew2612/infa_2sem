@@ -21,13 +21,6 @@ int main() {
         }
     }  
 
-    for (int i = 0; i < number_plus-1; i++) {
-        if (a[i] < a[i+1]) {
-            int swap = a[i+1];
-            a[i+1] = a[i];
-            a[i] = swap;
-        }
-    }
 
     for (int i = 0; i < N; i++) {
         std::cout << a[i]; 
