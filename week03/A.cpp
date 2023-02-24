@@ -12,16 +12,17 @@ void swap(int& lha, int& rha)
 }
 
 int main() {
+    int arr[N] = {0};
     for (int i = 0; i<N; ++i) {
-        cin >> array[i]; 
+        cin >> arr[i]; 
     }
 
     for (int i = 0; i<N/2; ++i) {
-        swap(array[i], array[N-1-i]);
+        swap(arr[i], arr[N-1-i]);
     }
 
     for (int i = 0; i<N; ++i) {
-        cout << array[i] << ' '; 
+        cout << arr[i] << ' '; 
     }
     return 0;
 }
