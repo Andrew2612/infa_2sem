@@ -5,23 +5,19 @@
 #endif
 
 int main() {
-    int x = 0;
-    int a[N] = {0};
-
-    std::cin >> x;
-    a[1] = x;
-    for (int i = 0; i < N - 1; i++) {
-        if (i == N - 2) {
-            std::cin >> x;
-            a[0] = x;
-        } else {
-            std::cin >> x;
-            a[i+2] = x;
-        }
-    }  
-    for (int i = 0; i < N; i++) {
-        std::cout << a[i]; 
+    int arr[N] = {0};
+    
+    for (int i = 0; i<N; i++) {
+        std::cin >> arr[i]; 
     }
-    std::cout << std::endl;
+    int bb = arr[N-1];
+
+    for (int i = N-1; i>0; i--) {
+        arr[i] = arr[i-1];
+    }
+    arr[0] = bb;
+    for (int i = 0; i<N; i++) {
+        std::cout << array[i] << ' '; 
+    }
     return 0;
 }
