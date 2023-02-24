@@ -14,7 +14,7 @@ void swap(int& lha, int& rha)
 int main() {
     int arr[N] = {0};
     for (int i = 0; i<N; ++i) {
-        cin >> arr[i]; 
+        std::cin >> arr[i]; 
     }
 
     for (int i = 0; i<N/2; ++i) {
@@ -22,7 +22,7 @@ int main() {
     }
 
     for (int i = 0; i<N; ++i) {
-        cout << arr[i] << ' '; 
+        std::cout << arr[i] << ' '; 
     }
     return 0;
 }
