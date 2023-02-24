@@ -21,7 +21,7 @@ int main() {
         swap(arr[i], arr[N-1-i]);
     }
 
-    for (int i = 0; i<N; ++i) {
+    for (int i = 0; i<N; i++) {
         std::cout << arr[i] << ' '; 
     }
     return 0;
