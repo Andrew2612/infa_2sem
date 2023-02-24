@@ -22,7 +22,6 @@ void create_array_2(int (&array)[N]) {
     for (int i = 0; i < N; i++) {
         array[i] = dstr(rng);
     }
-
 }
 
 int search (int (&arr)[N], int search_for) {
