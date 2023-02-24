@@ -1,7 +1,7 @@
 #include <iostream>
 
 #ifndef N
-#define N 10 
+#define N 10
 #endif
 
 int main() {
@@ -20,7 +20,7 @@ int main() {
         a[i+k+1] = x;
     }  
     for (int i = 0; i < N; i++) {
-        std::cout << a[i]; 
+        std::cout << a[i] << ' '; 
     }
     std::cout << std::endl;
     return 0;

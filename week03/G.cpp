@@ -13,17 +13,16 @@ int finder(int (&array)[N]) {
 }
 
 int main() {
-    int x = 0;
     int a[N] = {0};
+    for (int i = 0; i < N ; i++) {
+        std::cin >> a[i];
+    }
 
     for (int i = 0; i < N ; i++) {
-        std::cin >> x;
         for (int j = 0; j < i; j++) {
-            if (a[j] == x) {
+            if (a[j] == a[i]) {
                 a[j] = 0;
                 a[i] = 0;
-            } else {
-                a[i] = x;
             }
         }
     }  

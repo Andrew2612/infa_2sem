@@ -1,29 +1,31 @@
 #include <iostream>
 
 #ifndef N
-#define N 5
+#define N 7
 #endif
 
+void swap(int& lha, int& rha) {
+    int tmp = lha;
+    lha = rha;
+    rha = tmp;
+}
+
 int main() {
-    int x = 0;
-    int number_plus = 0;
-    int number_minus = 0;
-    int a[N] = {0};
-
-    for (int i = 0; i < N ; i++) {
-        std::cin >> x;
-        if (x >= 0) {
-            a[number_plus] = x;
-            number_plus++;
-        } else {
-            a[N - 1 - number_minus] = x;
-            number_minus++;
+    int a[N];
+    for (int i = 0; i < N; i++) {
+        std::cin >> a[i]; 
+    }
+    
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j<N-i-1; j++) {
+            if (a[j] < 0 and a[j+1] >= 0) {
+                swap(a[j], a[j+1]);
+            }
         }
-    }  
-
+    }
 
     for (int i = 0; i < N; i++) {
-        std::cout << a[i]; 
+        std::cout << a[i] << ' '; 
     }
     std::cout << std::endl;
     return 0;
