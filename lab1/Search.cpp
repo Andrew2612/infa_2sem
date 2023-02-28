@@ -3,7 +3,7 @@
 #include <random>
 
 #ifndef N
-#define N 500000
+#define N 100
 #endif
 
 //uporyadochenni massiv
@@ -32,22 +32,6 @@ int search (int (&arr)[N], int search_for) {
     }
     return -1;
 }
-
-// int bin_search (float left, float right, int search_for) {
-//     double epsilon = 1.e-3;
-//     double pivot = (left + right) / 2.;
-//     double answer = 0.;
-//     if (abs(left * left - search_for) < epsilon) {
-//         answer = left;
-//     } else if (abs(right * right - search_for) < epsilon) {
-//         answer = right;
-//     } else if (pivot * pivot < search_for) {
-//         answer = bin_search(pivot, right, search_for);
-//     } else {
-//         answer = bin_search(left, pivot, search_for);
-//     }
-//     return answer;
-// }
 
 int bin_search (int (&arr)[N], int left, int right, int search_for) {
     int center = (left + right) / 2.;
