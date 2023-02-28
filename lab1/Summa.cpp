@@ -3,7 +3,7 @@
 #include <random>
 
 #ifndef N
-#define N 5000
+#define N 100
 #endif
 
 //uporyadochenni massiv
@@ -56,12 +56,12 @@ int bin_search (int (&arr)[N], int left, int right, int search_for) {
 
 int main ( ) {
     int arr[N] = {0};
-    int search_for = 2*N-3;
+    int search_for = N-10;
     create_array_2(arr);
     //create_array_1(arr);
     
     auto begin = std::chrono::steady_clock::now();
-    for (int i = 1000; i > 0; i--) {
+    for (int i = 500; i > 0; i--) {
         search(arr, search_for);
         //bin_search(arr, 0, N-1,search_for);
     }
