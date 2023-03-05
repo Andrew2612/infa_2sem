@@ -9,7 +9,7 @@
 //uporyadochenni massiv
 void create_array_1(int (&array)[N]) {
     for (int i = 0; i < N; i++){
-        array[i] = i;
+        array[i] = 2 * i + 1;
     }
 }
 
@@ -21,6 +21,17 @@ void create_array_2(int (&array)[N]) {
 
     for (int i = 0; i < N; i++) {
         array[i] = dstr(rng);
+    }
+}
+
+int ss(int (&arr)[N], int left, int right, int search_for) {
+    int pivot = (left + right)/2;
+    if (arr[pivot] == search_for) {
+        return pivot;
+    } else if (arr[pivot] > search_for) {
+        return ss(arr, left, pivot,search_for);
+    } else {
+        return ss(arr, pivot, right, search_for);
     }
 }
 
@@ -43,11 +54,11 @@ int bin_search (int (&arr)[N], int left, int right, int search_for) {
         return -1;
     } else if (arr[right] < search_for) {
         return -1;
-    }else if (arr[left] > search_for) {
+    } else if (arr[left] > search_for) {
         return -1;
     } else if (arr[center] < search_for) {
         return bin_search(arr, center, right, search_for);
-    } else if (arr[center] > search_for) {
+    } else {
         return  bin_search(arr, left, center, search_for);
     }
 }
