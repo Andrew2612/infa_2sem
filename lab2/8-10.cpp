@@ -15,16 +15,35 @@ void swap(int &i, int &j) {
     i = tmp;
 }
 
-void sort (int array[], long long int &number_of_swaps)
+void shellsort (int array[], long long int &number_of_swaps)
 {
     for (int i = 1; i < N; i++) {
-        for (int j = 1; j < N; j++) {    
+        int j = i;
+        while (j > 1) {    
             if (array[j-1] > array[j]) {
                 swap(array[j-1], array[j]);
                 number_of_swaps++;
             }
+            j--;
         }
     }
+}
+
+void combSort (int array[], long long int& number_of_swaps) 
+{
+    int step = N/2;
+    while (step >= 1) {
+        for (int i = 0; i + step < N; i++)
+		{
+			if (array[i] > array[i + step])
+			{
+				swap(array[i], array[i + step]);
+                number_of_swaps++;
+			}
+		}
+		step /= 2;
+    }
+    shellsort(array, number_of_swaps);
 }
 
 void hibbardSort (int array[], long long int& number_of_swaps) 
@@ -41,7 +60,7 @@ void hibbardSort (int array[], long long int& number_of_swaps)
 		}
 		step -= 1;
     }
-    sort(array, number_of_swaps);
+    shellsort(array, number_of_swaps);
 }
 
 int fibonacci(int i) {
@@ -74,15 +93,17 @@ void fibSort (int array[], long long int& number_of_swaps)
 		}
 		iter -= 1;
     }
-    sort(array, number_of_swaps);
+    shellsort(array, number_of_swaps);
 }
 
 
 int main() {
     int array[N] = {0};
     std::ofstream out;
+    //out.open("combsort.csv", std::ios::app);
     //out.open("hibbardsort.csv", std::ios::app);
     out.open("fibsort.csv", std::ios::app);
+
     //out << "N,time,number of swaps" << std::endl;
 
     long long int number_of_swaps = 0;

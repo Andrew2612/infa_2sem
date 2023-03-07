@@ -27,7 +27,7 @@ void sort (int array[], int &number_of_swaps)
     }
 }
 
-void combSort (int array[], int& number_of_swaps) 
+void rasSort (int array[], int& number_of_swaps) 
 {
     int step = N/2;
     while (step >= 1) {
@@ -48,7 +48,7 @@ void combSort (int array[], int& number_of_swaps)
 int main() {
     int array[N] = {0};
     std::ofstream out;
-    out.open("combsort.csv", std::ios::app);
+    out.open("rassort.csv", std::ios::app);
     //out << "N,time,number of swaps" << std::endl;
 
     int number_of_swaps = 0;
@@ -62,7 +62,7 @@ int main() {
         array[j] = dstr(rng);
     }
     auto begin = std::chrono::steady_clock::now();
-    combSort(array, number_of_swaps);
+    rasSort(array, number_of_swaps);
     auto end = std::chrono::steady_clock::now();
     auto time_span = std::chrono::duration_cast<std::chrono::microseconds>(end - begin);
     
