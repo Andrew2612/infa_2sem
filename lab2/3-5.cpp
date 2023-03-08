@@ -5,6 +5,37 @@
 #define N 10
 #endif
 
+int test_forward(unsigned array[]) {
+    forward_step(array, 0, N-1);
+    for (int i = 1; i < N; i++) {
+        if (array[i-1] > array[i]) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+int test_backward(unsigned array[]) {
+    backward_step(array, N-1, 0);
+    for (int i = 1; i < N; i++) {
+        if (array[i-1] > array[i]) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+int test_shaker(unsigned array[]) {
+    shaker_sort(array, 0, N-1);
+    for (int i = 1; i < N; i++) {
+        if (array[i-1] > array[i]) {
+            return -1;
+        }
+    }
+    return 0;
+}
+
+
 void swap(unsigned &i, unsigned &j) {
     unsigned tmp = j;
     j = i;

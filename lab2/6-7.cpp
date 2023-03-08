@@ -5,9 +5,20 @@
 
 
 #ifndef N
-#define N 100000
+#define N 100
 #endif
 
+int test(int array[], int step) {
+    while (step >= 1) {
+        for (int i = 0; i + step < N; i++) {
+            if (array[i] > array[i + step]) {
+                return -1;
+            }
+        }
+        step /=2;
+    }
+    return 0;
+}
 
 void swap(int &i, int &j) {
     unsigned tmp = j;
@@ -41,6 +52,9 @@ void rasSort (int array[], int& number_of_swaps)
 		}
 		step /= 2;
     }
+    if (test(array, step) != 0) {
+        return;
+    } 
     sort(array, number_of_swaps);
 }
 
