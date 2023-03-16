@@ -37,4 +37,5 @@ int main() {
     std::cout <<  para_finishing.hours << ':' <<
     para_finishing.minutes << ':' << para_finishing.seconds 
     << std::endl;
+    return 0;
 }
