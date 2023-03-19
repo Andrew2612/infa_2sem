@@ -25,7 +25,7 @@ void qsort(Students (&arr)[], int N, int ind_left_base, int ind_right_base){
         while(arr[ind_right].result > pivot){
             ind_right--;
         }
-        if (ind_left <= ind_right){
+        if (ind_left < ind_right) {
             swap(arr[ind_left], arr[ind_right]);
             ind_left++;
             ind_right--;
