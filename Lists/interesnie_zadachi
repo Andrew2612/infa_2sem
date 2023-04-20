@@ -1,0 +1,28 @@
+// ATM
+
+#include <iostream>
+
+int main() {
+    int k = 0;
+    std::cin >> k;
+    int *kup = new int[k];
+    for (int i = 0; i < k; i++) {
+        std::cin >> kup[i];
+    }
+
+    int x = 0;
+    std::cin >> x;
+    int helper  = 0;
+    int counter = 0;
+    while (x != 0) {
+        while ((helper < k - 1) and (x / kup[helper + 1] != 0)) {
+            helper++;
+        }
+        counter += x / kup[helper];
+        x      = x % kup[helper];
+        helper = 0;
+    }
+    std::cout << counter;
+    delete[] kup;
+    return 0;
+}
