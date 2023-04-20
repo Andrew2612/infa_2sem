@@ -26,3 +26,39 @@ int main() {
     delete[] kup;
     return 0;
 }
+
+// ostanovki
+#include <iostream>
+
+int main() {
+    int n, k, s;
+    std::cin >> n >> k >> s;
+    int *dist = new int[s];
+    for (int i = 0; i < s; i++) {
+        std::cin >> dist[i];
+    }
+    int iter = -1;
+    if (dist[0] == 0) {
+        iter = -1;
+    }
+    int counter = 0;
+    int current = 0;
+    while (current < n) {
+        if ((iter == s && current < n) || (dist[iter + 1] - current > k)) {
+            std::cout << -1;
+            delete[] dist;
+            return 0;
+        }
+        while (iter < s - 1 && dist[iter + 1] - current <= k) {
+            iter++;
+        }
+        current = dist[iter];
+        counter++;
+        if (k + dist[iter] >= n) {
+            std::cout << counter;
+            delete[] dist;
+            return 0;
+        }
+    }
+    return 0;
+}
